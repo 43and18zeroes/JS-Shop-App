@@ -7,6 +7,21 @@ class Product {
   }
 }
 
+const PRODUCTS = [
+  new Product(
+    'Dumbbells',
+    './assets/img/fitness-5013986_640.jpg',
+    'State of the Art Dumbbells',
+    49.99
+  ),
+  new Product(
+    'Barbell',
+    './assets/img/gym-592899_640.jpg',
+    'High Quality Barbell',
+    99.99
+  ),
+];
+
 class ProductItem {
   constructor(product) {
     this.product = product;
@@ -40,20 +55,9 @@ class ProductItem {
 }
 
 class ProductList {
-  products = [
-    new Product(
-      'Dumbbells',
-      './assets/img/fitness-5013986_640.jpg',
-      'State of the art dumbbells',
-      49.99
-    ),
-    new Product(
-      'Barbell',
-      './assets/img/gym-592899_640.jpg',
-      'High Quality Barbell',
-      99.99
-    ),
-  ];
+  constructor() {
+    this.products = PRODUCTS;
+  }
 
   render() {
     const renderHook = document.querySelector('body');
@@ -71,6 +75,5 @@ class App {
     productList.render();
   }
 }
-
 
 App.render();
