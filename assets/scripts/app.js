@@ -35,4 +35,17 @@ class ProductList {
     new Product('Dumbbells', '', 'State of the art dumbbells', 49.99),
     new Product('Training Vest', '', 'High Quality Training Vest', 99.99),
   ];
+
+
+  render() {
+    const renderHook = document.getElementById('app');
+    const prodList = document.createElement('ul');
+    prodList.className = 'product-list';
+    for (const prod of this.products) {
+        const productItem = new ProductItem;
+        const prodEl = productItem.render();
+        prodList.append(prodEl);
+    }
+    renderHook.append(prodList);
+  }
 }
