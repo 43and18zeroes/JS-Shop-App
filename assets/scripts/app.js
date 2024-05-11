@@ -14,7 +14,6 @@ class ProductItem {
 
   render() {
     const prodEl = document.createElement('div');
-    // prodEl.className = 'row';
     prodEl.innerHTML = `
             <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -53,7 +52,6 @@ class ProductList {
   render() {
     const renderHook = document.getElementById('app');
     const prodList = document.createElement('div');
-    // prodList.className = 'product-list';
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
