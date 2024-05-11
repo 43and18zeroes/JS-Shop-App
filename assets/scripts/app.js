@@ -50,13 +50,6 @@ class ProductList {
 
   render() {
     const renderHook = document.querySelector('body');
-    // const prodList = document.createElement('div');
-    // for (const prod of this.products) {
-    //   const productItem = new ProductItem(prod);
-    //   const prodEl = productItem.render();
-    //   prodList.append(prodEl);
-    // }
-    // renderHook.append(prodList);
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
