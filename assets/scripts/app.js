@@ -46,8 +46,6 @@ class ProductList {
     ),
   ];
 
-  constructor() {}
-
   render() {
     const renderHook = document.querySelector('body');
     for (const prod of this.products) {
