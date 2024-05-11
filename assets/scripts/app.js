@@ -44,6 +44,12 @@ class ProductList {
       'High Quality Barbell',
       99.99
     ),
+    new Product(
+      'Barbell',
+      './assets/img/gym-592899_640.jpg',
+      'High Quality Barbell',
+      99.99
+    ),
   ];
 
   render() {
