@@ -12,10 +12,17 @@ class ProductItem {
     this.product = product;
   }
 
+  addToCard() {
+    console.log('Adding product to cart...');
+    console.log(this.product);
+  }
+
   render() {
     const prodEl = document.createElement('div');
     prodEl.className = 'col-sm-6 col-md-4';
     prodEl.innerHTML = this.buildProductDisplay();
+    const addCartButton = prodEl.querySelector('a');
+    addCartButton.addEventListener('click', this.addToCard.bind(this));
     return prodEl;
   }
 
