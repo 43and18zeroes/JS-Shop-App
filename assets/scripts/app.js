@@ -50,7 +50,7 @@ class ProductList {
   constructor() {}
 
   render() {
-    const renderHook = document.getElementById('app');
+    const renderHook = document.querySelector('body');
     const prodList = document.createElement('div');
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
