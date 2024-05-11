@@ -34,24 +34,26 @@ class ProductList {
   products = [
     new Product(
       'Dumbbells',
-      'https://images.pexels.com/photos/4793209/pexels-photo-4793209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      './assets/img/fitness-5013986_640.jpg',
       'State of the art dumbbells',
       49.99
     ),
     new Product(
-      'Training Vest',
-      'https://images.pexels.com/photos/19895884/pexels-photo-19895884/free-photo-of-mann-dach-arbeitnehmer-arbeiter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      'High Quality Training Vest',
+      'Barbell',
+      './assets/img/gym-592899_640.jpg',
+      'High Quality Barbell',
       99.99
     ),
   ];
+
+  constructor() {}
 
   render() {
     const renderHook = document.getElementById('app');
     const prodList = document.createElement('ul');
     prodList.className = 'product-list';
     for (const prod of this.products) {
-      const productItem = new ProductItem();
+      const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
       prodList.append(prodEl);
     }
