@@ -56,5 +56,11 @@ class ProductList {
   }
 }
 
-const productList = new ProductList();
-productList.render();
+class App {
+  static render() {
+    const productList = new ProductList();
+    productList.render();
+  }
+}
+
+App.render();
