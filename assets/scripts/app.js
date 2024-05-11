@@ -14,17 +14,16 @@ class ProductItem {
 
   render() {
     const prodEl = document.createElement('div');
+    prodEl.className = 'col-sm-6 col-md-4';
     prodEl.innerHTML = `
-            <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="${this.product.imageUrl}" alt="${this.product.title}">
-                  <div class="caption">
-                      <h3>${this.product.title}</h3>
-                      <p>${this.product.price}</p>
-                      <p>${this.product.description}</p>
-                      <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
-                  </div>
-                </div>
+              <img src="${this.product.imageUrl}" alt="${this.product.title}">
+              <div class="caption">
+                <h3>${this.product.title}</h3>
+                <p>${this.product.price}</p>
+                <p>${this.product.description}</p>
+                <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
+              </div>
             </div>
         `;
     return prodEl;
