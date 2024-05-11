@@ -33,5 +33,6 @@ class ProductItem {
 class ProductList {
   products = [
     new Product('Dumbbells', '', 'State of the art dumbbells', 49.99),
+    new Product('Training Vest', '', 'High Quality Training Vest', 99.99),
   ];
 }
