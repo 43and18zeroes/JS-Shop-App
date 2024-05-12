@@ -1,5 +1,22 @@
 import { PRODUCTS } from './products.js';
 
+class ShoppingCart {
+  // New
+  items = [];
+
+
+  render() {
+    const cartEl = document.createElement('section');
+    cartEl.innerHTML = `
+      <h2>Total: \$${0}</h2>
+      <button>Order Now!</button>
+    `;
+    cartEl.className = 'cart';
+    return cartEl;
+  }
+}
+
+
 class ProductItem {
   constructor(product) {
     this.product = product;
@@ -49,7 +66,10 @@ class ProductList {
 class Shop {
   render() {
     const renderHook = document.querySelector('body');
+    const cart = new ShoppingCart();
+    const cartEl = cart.render();
     const productList = new ProductList();
+    renderHook.append(cartEl);
     productList.render(renderHook);
   }
 }
