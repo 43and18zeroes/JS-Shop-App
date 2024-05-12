@@ -1,9 +1,7 @@
 import { PRODUCTS } from './products.js';
 
 class ShoppingCart {
-  // New
   items = [];
-
 
   render() {
     const cartEl = document.createElement('table');
