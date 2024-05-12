@@ -6,12 +6,16 @@ class ShoppingCart {
 
 
   render() {
-    const cartEl = document.createElement('section');
+    const cartEl = document.createElement('table');
+    cartEl.className = 'table';
     cartEl.innerHTML = `
-      <h2>Total: \$${0}</h2>
-      <button>Order Now!</button>
+      <tbody>
+        <tr>
+          <td>Total: \$${0}</td>
+          <td><button>Order Now!</button></td>
+        </tr>
+      </tbody>
     `;
-    cartEl.className = 'cart';
     return cartEl;
   }
 }
