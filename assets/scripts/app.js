@@ -3,10 +3,16 @@ import { PRODUCTS } from './products.js';
 class ShoppingCart {
   items = [];
 
+  addProduct(product) {
+    this.items.push(product);
+    this.totalOutput.innerHTML = `Total: \$${1}`;
+  }
+
   render() {
     const cartEl = document.createElement('table');
     cartEl.className = 'table';
     cartEl.innerHTML = this.buildCartItemsDisplay();
+    this.totalOutput = cartEl.querySelector('td:first-of-type');
     return cartEl;
   }
 
@@ -26,8 +32,9 @@ class ProductItem {
   }
 
   addToCard() {
-    console.log('Adding product to cart...');
-    console.log(this.product);
+    // console.log('Adding product to cart...');
+    // console.log(this.product);
+    App.addProductToCart(this.product);
   }
 
   render() {
@@ -84,6 +91,10 @@ class App {
     const shop = new Shop();
     shop.render();
     this.cart = shop.cart;
+  }
+
+  static addProductToCart(product) {
+    this.cart.addProduct(product);
   }
 }
 
