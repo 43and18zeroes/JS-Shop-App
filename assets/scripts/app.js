@@ -66,7 +66,7 @@ class ProductList {
 }
 
 class Shop {
-  render() {
+  static render() {
     const renderHook = document.querySelector('body');
     const cart = new ShoppingCart();
     const cartEl = cart.render();
@@ -78,8 +78,7 @@ class Shop {
 
 class App {
   static render() {
-    const shop = new Shop();
-    shop.render();
+    Shop.render();
   }
 }
 
