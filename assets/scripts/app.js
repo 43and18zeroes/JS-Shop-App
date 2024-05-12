@@ -1,4 +1,4 @@
-import { PRODUCTS } from "./products.js";
+import { PRODUCTS } from './products.js';
 
 class ProductItem {
   constructor(product) {
@@ -28,7 +28,7 @@ class ProductItem {
         <p>${this.product.description}</p>
         <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a></p>
       </div>
-    </div>`
+    </div>`;
   }
 }
 
@@ -37,8 +37,7 @@ class ProductList {
     this.products = PRODUCTS;
   }
 
-  render() {
-    const renderHook = document.querySelector('body');
+  render(renderHook) {
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
@@ -47,10 +46,18 @@ class ProductList {
   }
 }
 
+class Shop {
+  render() {
+    const renderHook = document.querySelector('body');
+    const productList = new ProductList();
+    productList.render(renderHook);
+  }
+}
+
 class App {
   static render() {
-    const productList = new ProductList();
-    productList.render();
+    const shop = new Shop();
+    shop.render();
   }
 }
 
