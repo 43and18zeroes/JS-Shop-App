@@ -20,7 +20,6 @@ class ShoppingCart {
   }
 }
 
-
 class ProductItem {
   constructor(product) {
     this.product = product;
