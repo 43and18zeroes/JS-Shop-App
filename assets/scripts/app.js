@@ -1,4 +1,4 @@
-import { Product, PRODUCTS } from "./products.js";
+import { PRODUCTS } from "./products.js";
 
 class ProductItem {
   constructor(product) {
