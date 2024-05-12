@@ -1,19 +1,5 @@
 import { PRODUCTS } from "./products.js";
 
-class ShoppingCart {
-  items = [];
-
-  render() {
-    const cartEl = document.createElement('section');
-    cartEl.innerHTML = `
-      <h2>Total: \$${0}</h2>
-      <button>Order Now!</button>
-    `;
-    cartEl.className = 'cart';
-    return cartEl;
-  }
-}
-
 class ProductItem {
   constructor(product) {
     this.product = product;
@@ -51,7 +37,8 @@ class ProductList {
     this.products = PRODUCTS;
   }
 
-  render(renderHook) {
+  render() {
+    const renderHook = document.querySelector('body');
     for (const prod of this.products) {
       const productItem = new ProductItem(prod);
       const prodEl = productItem.render();
@@ -60,27 +47,11 @@ class ProductList {
   }
 }
 
-class Shop {
-  render() {
-    const renderHook = document.querySelector('body');
-    const cart = new ShoppingCart();
-    const cartEl = cart.render();
+class App {
+  static render() {
     const productList = new ProductList();
-    const prodListEl = productList.render(renderHook);
-
-    renderHook.append(cartEl);
-    renderHook.append(productList);
+    productList.render();
   }
 }
 
-const shop = new Shop();
-shop.render();
-
-// class App {
-//   static render() {
-//     const productList = new ProductList();
-//     productList.render();
-//   }
-// }
-
-// App.render();
+App.render();
