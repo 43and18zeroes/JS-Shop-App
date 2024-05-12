@@ -67,10 +67,10 @@ class ProductList {
 }
 
 class Shop {
-  static render() {
+  render() {
     const renderHook = document.querySelector('body');
-    const cart = new ShoppingCart();
-    const cartEl = cart.render();
+    this.cart = new ShoppingCart();
+    const cartEl = this.cart.render();
     const productList = new ProductList();
     renderHook.append(cartEl);
     productList.render(renderHook);
@@ -78,9 +78,13 @@ class Shop {
 }
 
 class App {
-  static render() {
-    Shop.render();
+  static cart;
+
+  static init() {
+    const shop = new Shop();
+    shop.render();
+    this.cart = shop.cart;
   }
 }
 
-App.render();
+App.init();
